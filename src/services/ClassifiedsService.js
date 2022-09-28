@@ -23,6 +23,13 @@ class ClassifiedsService {
   }
 
 
+  async createClassified(formData) {
+    const res = await SandboxApi.post('/api/classifieds', formData)
+    AppState.classifieds.push(new Classified(res.data))
+    // AppState.classifieds = [...AppState.classifieds, new Classified(res.data)]
+  }
+
+
 }
 
 export const classifiedsService = new ClassifiedsService()
