@@ -1,11 +1,26 @@
 <template>
+
   <div class="details" v-if="classified">
-
-    <div class="col-10 m-auto" v-if="classified.listingType == 'Car'">
-
-      <CarCard :car="classified.listing" :seller="classified.seller" />
+    <div class="col-12 d-flex justify-content-center">
+      <h4>{{classified.listingType}}</h4>
     </div>
-    <div>{{classified.listingType}}</div>
+    <div class="col-12 d-flex justify-content-center">
+      <h5 class="border border-dark"> Year:{{classified.listing.year}}</h5>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <h4>Price:${{classified.listing.price}}</h4>
+
+    </div>
+    <div class="col-12 d-flex justify-content-end ">
+      <p>{{classified.listing.description}} </p>
+    </div>
+
+    <div class="col-5 " v-if="classified.listingType == 'Car'">
+      <CarCard :car="classified.listing" :seller="classified.seller" />
+
+    </div>
+
+
 
   </div>
   <div v-else>
@@ -39,9 +54,17 @@ export default {
       getClassifiedById();
     });
     return {
-      classified: computed(() => AppState.activeClassified)
+      classified: computed(() => AppState.activeClassified),
+
     };
   },
   components: { CarCard }
 }
 </script>
+<style scoped lang="scss">
+.row {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKFDQP3J-Abc81uRy4UR2hh1Rv59MaZIJVgA&usqp=CAU");
+  background-position: center;
+
+}
+</style>

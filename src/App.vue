@@ -1,9 +1,21 @@
 <template>
+  <header class="container-fluid">
+    <div class="row p-4 bg-dark">
+      <div class="col-12 d-flex justify-content-center justify-content-evenly">
+        <button class="btn btn-success selectable">
+          <router-link :to="{name:'Home'}">Home</router-link>
+        </button>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>Cars</button>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>Jobs</button>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>House</button>
+
+      </div>
+    </div>
+  </header>
   <main class="container-fluid">
     <div class="row">
       <div class="col-md-2 d-none d-md-block bg-dark text-light sidebar">
         <Login />
-
         <button class="btn" data-bs-target="#classifiedsCanvas" data-bs-toggle="offcanvas" v-if="account.id">
           <span class="text-success lighten-30 selectable text-uppercase">
             Add a Listing
