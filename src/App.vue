@@ -3,9 +3,9 @@
     <div class="row p-4 bg-dark">
       <div class="col-12 d-flex justify-content-center justify-content-evenly">
         <button class="btn btn-success selectable">
-          <router-link :to="{name:'Home'}">Home</router-link>
+          <router-link :to="{ name: 'Home' }">Home</router-link>
         </button>
-        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>Cars</button>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>Cars </button>
         <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>Jobs</button>
         <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>House</button>
 
