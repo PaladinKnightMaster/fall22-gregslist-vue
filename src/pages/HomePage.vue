@@ -12,8 +12,18 @@
             <CarCard :car="c.listing" :seller="c.seller" @deleteClassified="deleteClassified(c.id)" />
           </router-link>
         </div>
-
-
+      </div>
+      <div class="col-lg-6 col-md-4 my-3" v-for="c in classifieds" :key="c.id">
+        <div v-if="c.listingType == 'House'">
+          <router-link :to="{
+            name: 'Details',
+            params: {
+              id: c.id
+            }
+          }">
+            <HouseCard :house="c.listing" :seller="c.seller" @deleteClassified="deleteClassified(c.id)" />
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -24,6 +34,7 @@ import { computed } from '@vue/reactivity';
 import { onMounted } from 'vue';
 import { AppState } from '../AppState.js';
 import CarCard from '../components/CarCard.vue';
+import HouseCard from "../components/HouseCard.vue";
 import { classifiedsService } from '../services/ClassifiedsService.js';
 import Pop from '../utils/Pop.js';
 
@@ -55,7 +66,7 @@ export default {
       }
     };
   },
-  components: { CarCard }
+  components: { CarCard, HouseCard }
 }
 </script>
 

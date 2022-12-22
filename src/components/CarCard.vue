@@ -51,6 +51,13 @@ export default {
   transition: all 0.5s ease;
 }
 
+.card:hover {
+  filter: brightness(90%);
+  transition: all 0.5s ease;
+  box-shadow: rgba(46, 49, 240, 0.4) 5px 5px, rgba(46, 169, 240, 0.3) 10px 10px,
+    rgba(30, 20, 1, 0.2) 15px 15px, rgba(88, 46, 240, 0.1) 20px 20px;
+}
+
 .forcedImg {
   height: 300px;
   width: auto;
