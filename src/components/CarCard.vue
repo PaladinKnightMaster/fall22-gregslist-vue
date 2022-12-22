@@ -1,8 +1,8 @@
 <template>
   <div class="card">
-    <img class="rounded-top" :src="car.imgUrl" :alt="car.make">
+    <img class="rounded-top forcedImg" :src="car.imgUrl" :alt="car.make">
     <div class="card-body d-flex justify-content-between align-items-center">
-      <h5>{{car.make}} {{car.model}}</h5>
+      <h5>{{ car.make }} {{ car.model }}</h5>
       <div class="align-items-center d-flex gap-2">
         <img :src="seller.picture" :alt="seller.name" :title="seller.name" height="30" class="rounded">
         <i class="mdi mdi-delete-forever fs-4 selectable rounded" @click.stop="$emit('deleteClassified')"
@@ -44,5 +44,16 @@ export default {
 
 
 <style lang="scss" scoped>
+.cardText:hover {
+  filter: brightness(114%);
+  border-bottom: 4px solid red;
+  text-decoration: underline red;
+  transition: all 0.5s ease;
+}
 
+.forcedImg {
+  height: 300px;
+  width: auto;
+  object-fit: cover;
+}
 </style>
