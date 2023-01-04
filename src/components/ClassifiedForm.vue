@@ -83,11 +83,12 @@
           <label for="description">Description</label>
         </div>
 
-        < class="d-flex my-4 gap-5 align-items-center">
+        <div class="d-flex my-4 gap-5 align-items-center">
           <button class="btn" type="reset">Cancel</button>
           <button class="btn btn-primary" type="submit">${
             editable.id ? 'Save Changes' : 'Create'
             } </button>
+        </div>
       </form>
     </div>
 
