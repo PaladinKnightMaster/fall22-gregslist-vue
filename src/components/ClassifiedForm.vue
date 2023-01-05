@@ -44,15 +44,15 @@
       <h1>TODO</h1>
     </div>
 
-    <div class="house-form text-dark" v-if="placeholder == true">
+    <div class="house-form text-dark" v-else-if="editable.listingType == 'House'">
       <form onsubmit="app.housesController.handleSubmit()">
 
-        <div class="form-floating mb-3">
+        <div class="form-group mb-3">
           <input type="number" class="form-control" name="bedrooms" required minlength="3" value="${editable.bedrooms}">
           <label for="bedrooms">Bedrooms</label>
         </div>
 
-        <div class="form-floating mb-3">
+        <div class="form-group mb-3">
           <input type="number" class="form-control" name="bathrooms" value="${editable.bathrooms}">
           <label for="bathrooms">Bathrooms</label>
         </div>
@@ -67,17 +67,17 @@
           <label for="imgUrl">Picture!</label>
         </div>
 
-        <div class="form-floating mb-3">
+        <div class="form-group mb-3">
           <input type="number" class="form-control" name="year" required max="9999" value="${editable.year}">
           <label for="year">Year</label>
         </div>
 
-        <div class="form-floating mb-3">
+        <div class="form-group mb-3">
           <input type="number" class="form-control" name="price" required min="0" value="${editable.price}">
           <label for="price">Price</label>
         </div>
 
-        <div class="form-floating">
+        <div class="form-group">
           <textarea class="form-control" placeholder="Describe your Listing"
             name="description">${editable.description}</textarea>
           <label for="description">Description</label>
@@ -105,6 +105,7 @@
 
 <script>
 import { ref } from 'vue';
+import { House } from "../models/House.js";
 import { classifiedsService } from '../services/ClassifiedsService.js';
 import Pop from '../utils/Pop.js';
 

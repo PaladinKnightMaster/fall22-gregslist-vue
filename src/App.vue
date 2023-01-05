@@ -5,9 +5,15 @@
         <button class="btn btn-success selectable">
           <router-link :to="{ name: 'Home' }">Home</router-link>
         </button>
-        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>Cars </button>
-        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>Jobs</button>
-        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>House</button>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>
+          <router-link :to="{ name: 'Cars' }">Cars</router-link>
+        </button>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i><router-link
+            :to="{ name: 'Jobs' }">Jobs</router-link>
+        </button>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i><router-link
+            :to="{ name: 'House' }">House</router-link>
+        </button>
 
       </div>
     </div>
