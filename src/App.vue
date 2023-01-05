@@ -5,8 +5,8 @@
         <button class="btn btn-success selectable">
           <router-link :to="{ name: 'Home' }">Home</router-link>
         </button>
-        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>
-          <router-link :to="{ name: 'Cars' }">Cars</router-link>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5" v-for="c in classifieds" :key="c.id"></i>
+          <router-link :to="{ name: 'Details', params: { id: c.id } }">Cars</router-link>
         </button>
         <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i><router-link
             :to="{ name: 'Jobs' }">Jobs</router-link>
@@ -57,6 +57,8 @@ import Navbar from './components/Navbar.vue'
 
 export default {
   setup() {
+
+
     return {
       appState: computed(() => AppState),
       account: computed(() => AppState.account)

@@ -2,7 +2,7 @@
   <div class="component">
     <div clas="row justify-content-center scrollme">
 
-      <CarCard v-for="car in cars" :key="car.id" :car="car" />
+
 
 
     </div>
@@ -22,9 +22,9 @@ import Pop from "../utils/Pop.js";
 export default {
   setup() {
 
-    onMounted(() => GettingClassifieds())
+    onMounted(() => GetClassifieds())
 
-    async function GettingClassifieds() {
+    async function GetClassifieds() {
       try {
         await classifiedsService.getClassifieds()
       } catch (error) {
