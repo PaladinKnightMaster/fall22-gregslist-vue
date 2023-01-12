@@ -5,14 +5,12 @@
         <button class="btn btn-success selectable">
           <router-link :to="{ name: 'Home' }">Home</router-link>
         </button>
-        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5" v-for="c in classifieds" :key="c.id"></i>
-          <router-link :to="{ name: 'Details', params: { id: c.id } }">Cars</router-link>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5">Cars</i>
         </button>
-        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i><router-link
-            :to="{ name: 'Jobs' }">Jobs</router-link>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i><i :to="{ name: 'Jobs' }">Jobs</i>
         </button>
-        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i><router-link
-            :to="{ name: 'House' }">House</router-link>
+        <button class="btn btn-success"><i class="mdi mdiStarFace fs-5"></i>
+          House
         </button>
 
       </div>
